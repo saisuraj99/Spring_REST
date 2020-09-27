@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dxc.beans.Exam;
 import com.dxc.repository.ExamRepository;
 
-
 @RestController
 public class ExamController {
 
@@ -37,7 +36,4 @@ public class ExamController {
 	{
 		return examRepository.save(exam);
 	}
-	
-	
-	
 }

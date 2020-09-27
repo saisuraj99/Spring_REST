@@ -2,21 +2,20 @@ package com.dxc.beans;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Student {
-
 	@Id
 	private int id;
 	private String name;
-	private Date dob;
+//	private Date dob;
+	private String dob;
 	private String email;
 	private String mobile;
-	
+
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -26,14 +25,13 @@ public class Student {
 		super();
 		this.id = id;
 		this.name = name;
-		
-			SimpleDateFormat date= new SimpleDateFormat("dd-MM-yyyy");
-			dob =date.parse(dobth);
-		
+
+//		SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
+//		this.dob = date.parse(dobth);
+		this.dob=dobth;
 		this.email = email;
 		this.mobile = mobile;
 	}
-
 
 	public int getId() {
 		return id;
@@ -51,16 +49,24 @@ public class Student {
 		this.name = name;
 	}
 
-	public Date getDob() {
-		return dob;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
+//	public Date getDob() {
+//		return dob;
+//	}
+//
+//	public void setDob(Date dob) {
+//		this.dob = dob;
+//	}
 
 	public String getEmail() {
 		return email;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
 
 	public void setEmail(String email) {
@@ -75,10 +81,11 @@ public class Student {
 		this.mobile = mobile;
 	}
 
-
 	@Override
 	public String toString() {
-		String dobth = new SimpleDateFormat("dd-MM-YYYY").format(dob);
-		return "Student [id=" + id + ", name=" + name + ", dob=" + dobth + ", email=" + email + ", mobile=" + mobile + "]";
+		String dobth = new SimpleDateFormat("dd-MM-yyyy").format(dob);
+		return "Student [id=" + id + ", name=" + name + ", dob=" + dobth + ", email=" + email + ", mobile=" + mobile
+				+ "]";
 	}
+
 }
